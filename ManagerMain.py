@@ -1,6 +1,6 @@
 from random import randint      # import random function
 
-# TODO: Start Menu with "GUI"
+# TODONE: Start Menu with "GUI"
 # TODO: Special chars Selector (ON/OFF)
 # TODO: Numbers Selector (ON/OFF)
 # TODONE: User login system
@@ -14,7 +14,7 @@ Please note: this document serves for PROTOTYPING purposes only. It is not the f
 24.11.2020
 """
 
-charNumber = 100      # arbitrary length number of password characters
+charNumber = 10000000000000000000      # arbitrary length number of password characters
 
 ASCIIkey = []       # array initialization (storage of ASCII chars in DEC)
 
@@ -24,5 +24,5 @@ for i in range(0, charNumber, 1):       # loop to fill array from location 0 to 
 generatedPassword = "".join(chr(j) for j in ASCIIkey)       # conversion ASCII-DEC to CHAR and stringing CHARs together
 
 
-print(ASCIIkey)
+# print(ASCIIkey)
 print(generatedPassword)

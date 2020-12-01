@@ -8,7 +8,9 @@ Python Password Manager Framework - Login system
 import os
 from time import sleep
 
+"""
 
+"""
 def clearScreenConsole():
     os.system("cls")
     if os.name == 'nt':     # for windows
