@@ -7,6 +7,23 @@ Python Password Manager Framework - Login system
 
 import os
 from time import sleep
+#
+"""
+Make the Settings so the user can day if he want to stay logged in
+Juri Ladurner
+1.12.2020
+"""
+def LoginSettingStayLogin(username):
+    ReadFile = open("UserData/" + username.lower() + ".txt", "r")
+    ReadFifthLine= ReadFile.readlines()[3]
+
+    if ReadFifthLine == "€stayLoggedIn = true":
+        return True
+    elif ReadFifthLine == "€stayLoggedIn = false":
+        return False
+    else:
+        print("Not finished")       # TODO: ADD else
+
 
 """
 Screen clearing function for Console-Execution (Bash/CMD)
@@ -58,6 +75,10 @@ def loginFunction():
         print("Please login. Write REGISTER in the Username field to create a new account.")
         print()
         username = input("Username: ")
+        if LoginSettingStayLogin(username):     # TODO: Add if else conditions
+            print("Not finished")
+        else:
+            print("Not finished")
         if username.lower() == "register":      # Checks if register option is selected
             registerLoop = 1
             while registerLoop == 1:
