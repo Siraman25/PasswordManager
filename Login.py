@@ -7,12 +7,15 @@ Python Password Manager Framework - Login system
 
 import os
 from time import sleep
-#
+import GUI.py
+
 """
 Make the Settings so the user can day if he want to stay logged in
 Juri Ladurner
 1.12.2020
 """
+
+
 def LoginSettingStayLogin(username):
     ReadFile = open("UserData/" + username.lower() + ".txt", "r")
     ReadFifthLine= ReadFile.readlines()[3]
@@ -30,6 +33,8 @@ Screen clearing function for Console-Execution (Bash/CMD)
 Aris Mandolini
 24.11.2020
 """
+
+
 def clearScreenConsole():
     if os.name == 'nt':     # for windows
         _ = os.system('cls')
@@ -42,6 +47,8 @@ Screen clearing function for PyCharm-Execution (Print lines without Bash/CMD)
 Aris Mandolini
 24.11.2020
 """
+
+
 def clearScreenNormal():
     print("\n"*100)     # Prints 100 clear lines
 
@@ -51,6 +58,8 @@ User-creating function for username storage and password.
 Aris Mandolini
 24.11.2020
 """
+
+
 def registeredUser(username, password):
     fileOpenNew = open("UserData/" + username.lower() + ".txt", "a")        # Opens (creates) new user file
     fileOpenNew.write("Account correct.")       # Adds correction statement to user account
@@ -64,6 +73,8 @@ Main login function, which is being called by other Modules. It handles login an
 Aris Mandolini
 24.11.2020
 """
+
+
 def loginFunction():
 
     loginLoop = 1
@@ -75,10 +86,10 @@ def loginFunction():
         print("Please login. Write REGISTER in the Username field to create a new account.")
         print()
         username = input("Username: ")
-        if LoginSettingStayLogin(username):     # TODO: Add if else conditions
-            print("Not finished")
-        else:
-            print("Not finished")
+        # if LoginSettingStayLogin(username):     # TODO: Add if else conditions
+        #     print("Not finished")
+        # else:
+        #     print("Not finished")
         if username.lower() == "register":      # Checks if register option is selected
             registerLoop = 1
             while registerLoop == 1:
@@ -114,6 +125,7 @@ def loginFunction():
                     if password == readThirdLine[1]:        # Checks validity of password
                         print("Welcome. Access Granted.")
                         sleep(5)
+                        GUI.Menue()
                     else:
                         print("Wrong password.")
                         sleep(5)
@@ -124,4 +136,4 @@ def loginFunction():
                 sleep(5)
 
 
-loginFunction()     # Calls loginFunction for testing purposes
+# loginFunction()     # Calls loginFunction for testing purposes

@@ -5,6 +5,8 @@ Switch Case to open the subprograms
 Juri Ladurner
 30.11.2020
 """
+
+
 def switch_Menue(argument):
     switcher = {        # Switch-case function for python
         1: "",                         # TODO; enter valid options in the cases
@@ -18,6 +20,8 @@ The Menue where the user can decide with Subprograms he want to use
 Juri Ladurner
 30.11.2020
 """
+
+
 def Menue():
     possibility = 7
     while possibility >=4 or possibility <= 0:                           # Loop if wrong input
@@ -26,4 +30,4 @@ def Menue():
     switch_Menue(possibility)                   # Call the switch_Menue function
 
 
-Menue()     # Calls Menue function for testing purposes
+# Menue()     # Calls Menue function for testing purposes
