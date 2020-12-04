@@ -1,3 +1,10 @@
+"""
+Python Password Manager Framework - Startup checks system
+
+(c) Aris Mandolini 2020 - Python Password Manager PPM
+04.12.2020
+"""
+
 import os
 import Login
 

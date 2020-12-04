@@ -1,7 +1,7 @@
 """
 Python Password Manager Framework - Login system
 
-(c) Aris Mandolini 2020 - Python Password Manager PPM
+(c) Aris Mandolini, Juri Ladurner 2020 - Python Password Manager PPM
 24.11.2020
 """
 

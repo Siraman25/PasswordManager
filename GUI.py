@@ -1,3 +1,10 @@
+"""
+Python Password Manager Framework - GUI selection system
+
+(c) Juri Ladurner, Aris Mandolini 2020 - Python Password Manager PPM
+04.12.2020
+"""
+
 import sys
 import PasswordGenerator
 
@@ -11,7 +18,7 @@ Juri Ladurner
 def switch_Menue(argument):
     switcher = {        # Switch-case function for python
         1: PasswordGenerator.mainPasswordGenerator(),       # Starts the password generation
-        2: "",                         # TODO; enter valid options in the cases
+        2: "",                         # TODO: enter valid options in the cases
         3: sys.exit(0)      # Program exits with code 0
     }
 
