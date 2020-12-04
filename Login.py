@@ -7,7 +7,7 @@ Python Password Manager Framework - Login system
 
 import os
 from time import sleep
-import GUI.py
+import GUI
 
 """
 Make the Settings so the user can day if he want to stay logged in
