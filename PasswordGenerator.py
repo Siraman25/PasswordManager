@@ -117,4 +117,4 @@ def mainPasswordGenerator():
     addChecker(webSiteName, webSiteUrl, PasswordGeneration(numberSelector, specCharSelector, passwordLength), nameloop)
 
 
-# mainPasswordGenerator()
+# mainPasswordGenerator()     # For debugging use
