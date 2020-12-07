@@ -97,7 +97,7 @@ def loginFunction():
                 if os.path.isfile("UserData/" + setUsername.lower() + ".txt"):  # Checks if user (file) already exists
                     print("Username already in use.")
                     registerLoop = 1
-                    sleep(5)
+                    sleep(3)
                 else:
                     passwordLoop = 1
                     while passwordLoop == 1:
@@ -108,11 +108,11 @@ def loginFunction():
                         else:
                             print("Wrong password. Please try again.")
                             passwordLoop = 1
-                            sleep(5)
+                            sleep(3)
                     registeredUser(setUsername, setPassword)        # Calls registeredUser function
                     print("Username set up complete. You may now log in.")
                     registerLoop = 0
-                    sleep(5)
+                    sleep(3)
 
             loginLoop = 1
         else:
@@ -124,16 +124,17 @@ def loginFunction():
                     password = input("Password: ")      # Allocates password
                     if password == readThirdLine[1]:        # Checks validity of password
                         print("Welcome. Access Granted.")
-                        sleep(5)
+                        sleep(3)
                         GUI.Menue()
+                        loginLoop = 0
                     else:
                         print("Wrong password.")
-                        sleep(5)
-                    loginLoop = 0
+                        sleep(3)
+                        loginLoop = 1
             else:
                 print("Account Username wrong.")
                 loginLoop = 1
-                sleep(5)
+                sleep(3)
 
 
 # loginFunction()     # Calls loginFunction for testing purposes

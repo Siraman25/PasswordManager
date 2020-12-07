@@ -18,9 +18,11 @@ Aris Mandolini, Juri Ladurner
 
 def switch_Menue(inputchar):
     if inputchar == 1:
-        PasswordGenerator.mainPasswordGenerator()       # Opens mainPasswordGenerator() funct. in PasswordGenerator mod.
+        if PasswordGenerator.mainPasswordGenerator() == "back":      # Opens mainPasswordGenerator() funct. in PasswordGenerator mod.
+            return "back"
     elif inputchar == 2:
-        PasswordManagement.mainMangement()      # Opens mainManagement() function in PasswordManagement module
+        if PasswordManagement.mainMangement() == "back":      # Opens mainManagement() function in PasswordManagement module
+            return "back"
     else:
         sys.exit(0)     # Program exits with code 0
 
@@ -49,11 +51,14 @@ Juri Ladurner
 
 
 def Menue():
-    possibility = 7
-    while possibility >= 4 or possibility <= 0:                           # Loop if wrong input
-        print("Add new password: 1\nSearch password:  2\nQuit program:     3")
-        possibility = int(input("What do you want to do? "))
-    switch_Menue(possibility)                   # Call the switch_Menue function
+    loop = True
+    while loop is True:
+        possibility = 7
+        while possibility >= 4 or possibility <= 0:                           # Loop if wrong input
+            print("Add new password: 1\nSearch password:  2\nQuit program:     3")
+            possibility = int(input("What do you want to do? "))
+        if switch_Menue(possibility) == "back":     # Call the switch_Menue function
+            loop = True
 
 
 # Menue()     # Calls Menue function for debuging use
