@@ -71,13 +71,14 @@ Aris Mandolini
 def mainMangement():
     ManagementLoop = 1
     while ManagementLoop == 1:
-        print("Welcome to your password manager.")
-        print("Here you will be able to read, modify or delete your passwords.")
-        print("Available commands:")
-        print("  - Read or r + number from 1 - x: Password selector from list (read mode)")
-        print("  - Delete or d + number from 1 - x: Password selector from list (delete mode)")
-        print("  - Modify or m + number from 1 - x: Password selector from list (modify mode)")
-        print("  - Back or b: Back to GUI selection screen")
+        print("""
+Welcome to your password manager.
+Here you will be able to read, modify or delete your passwords.
+Available commands:
+    - Read or r + number from 1 - x: Password selector from list (read mode)")
+    - Delete or d + number from 1 - x: Password selector from list (delete mode)")
+    - Modify or m + number from 1 - x: Password selector from list (modify mode)")
+    - Back or b: Back to GUI selection screen""")
         i = 1
         passwordDictionary = pwListingDictionary()
         passwordList = pwListing()
