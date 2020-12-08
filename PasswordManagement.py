@@ -75,9 +75,9 @@ def mainMangement():
 Welcome to your password manager.
 Here you will be able to read, modify or delete your passwords.
 Available commands:
-    - Read or r + number from 1 - x: Password selector from list (read mode)")
-    - Delete or d + number from 1 - x: Password selector from list (delete mode)")
-    - Modify or m + number from 1 - x: Password selector from list (modify mode)")
+    - Read or r + number from 1 - x: Password selector from list (read mode)
+    - Delete or d + number from 1 - x: Password selector from list (delete mode)
+    - Modify or m + number from 1 - x: Password selector from list (modify mode)
     - Back or b: Back to GUI selection screen""")
         i = 1
         passwordDictionary = pwListingDictionary()
