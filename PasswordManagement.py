@@ -100,4 +100,4 @@ Available commands:
             return "back"       # Returns "back" to mainManagement() function, brings user back to GUI.py
 
 
-# mainMangement()     # For debugging use
+# mainManagement()     # For debugging use
