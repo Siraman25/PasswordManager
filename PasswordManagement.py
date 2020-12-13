@@ -6,6 +6,7 @@ Python Password Manager Framework - Password management system
 """
 
 import os
+import Login
 
 """
 Lists all passwords and puts them in a dictionary with key: number, value: password txt file
@@ -41,6 +42,26 @@ def pwListing():
 
 
 """
+Delete subsystem, deletes selected login information
+Aris Mandolini
+13.12.2020
+"""
+
+
+def deleteSubSys(selector, passDict):
+    newselector = selector.lower().replace("delete", "").replace("d", "").replace(" ", "")        # Formats the selector
+    if int(newselector) in passDict:    # Checks if the selector value exists in passDict (password dictionary)
+        fileName = (passDict[int(newselector)])     # Defines file name
+        os.remove("UserData/Saves/" + fileName)     # Removes file
+        if os.path.isfile("UserData/Saves/" + fileName):        # Checks if file still exists
+            print("Error removing file. Please try again.")
+        else:
+            print(f"Login information of {fileName[:-4]} successfully removed.")
+    else:
+        print("Please select a valid number")       # Prints error if exception
+
+
+"""
 Read subsystem, allows to read selected login information
 Aris Mandolini
 07.12.2020
@@ -69,6 +90,9 @@ Aris Mandolini
 
 
 def mainMangement():
+    Login.clearScreenNormal()
+    Login.clearScreenConsole()
+
     ManagementLoop = 1
     while ManagementLoop == 1:      # Repeats program until user stops it
         print("""
@@ -90,13 +114,15 @@ Available commands:
 
         # Checks selector command, calls other functions for each respective subsystem
         if selector.replace(" ", "").lower()[:-1] == "read" or selector.replace(" ", "").lower()[:-1] == "r":
+            # print("delete")     # TODONE: Create read subsystems with relative functions
             readSubSys(selector, passwordDictionary)        # Calls readSubSys function, read mode
         elif selector.replace(" ", "").lower()[:-1] == "delete" or selector.replace(" ", "").lower()[:-1] == "d":
-            print("delete")     # TODO: Create delete subsystems with relative functions
+            # print("delete")     # TODONE: Create delete subsystems with relative functions
+            deleteSubSys(selector, passwordDictionary)
         elif selector.replace(" ", "").lower()[:-1] == "modify" or selector.replace(" ", "").lower()[:-1] == "m":
             print("modify")     # TODO: Create modify subsystems with relative functions
         elif selector.replace(" ", "").lower() == "back" or selector.replace(" ", "").lower() == "b":
-            print("back")       # TODONE: Create program exit control
+            # print("back")       # TODONE: Create program exit control
             return "back"       # Returns "back" to mainManagement() function, brings user back to GUI.py
 
 
