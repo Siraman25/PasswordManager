@@ -100,16 +100,10 @@ def mainPasswordGenerator():
     print()
     print("Thank you. We are generating your password.")
     # Checks number selection
-    if numberSelector.lower() == "" or numberSelector.lower() == "yes" or numberSelector.lower() == "y":
-        numberSelector = True
-    else:
-        numberSelector = False
+    numberSelector = bool(numberSelector.lower() == "" or numberSelector.lower() == "yes" or numberSelector.lower() == "y")
 
     # Checks special characters selection
-    if specCharSelector.lower() == "" or specCharSelector.lower() == "yes" or specCharSelector.lower() == "y":
-        specCharSelector = True
-    else:
-        specCharSelector = False
+    specCharSelector = bool(specCharSelector.lower() == "" or specCharSelector.lower() == "yes" or specCharSelector.lower() == "y")
 
     nameloop = True
     # Calls addChecker function, which checks and saves the password, before being called it calls function
